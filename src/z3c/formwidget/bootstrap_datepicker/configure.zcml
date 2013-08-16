@@ -21,7 +21,7 @@
   <z3c:widgetTemplate
       layer="z3c.form.interfaces.IFormLayer"
       mode="input"
-      template="input.pt"
+      template="input_component.pt"
       widget=".interfaces.IBootstrapDatepickerWidget"
       />
 
