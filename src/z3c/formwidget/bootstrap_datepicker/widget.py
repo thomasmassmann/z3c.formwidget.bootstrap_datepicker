@@ -2,7 +2,6 @@
 """A twitter bootstrap datepicker widget for z3c.form."""
 
 # python imports
-from js.bootstrapdatepicker import bootstrapdatepicker, bootstrapdatepicker_locales
 import string
 
 # zope imports
@@ -15,7 +14,13 @@ from zope.schema.interfaces import (IFromUnicode, ITextLine)
 from zope.interface import implementer, implements
 
 # local imports
-from z3c.formwidget.bootstrap_datepicker.interfaces import IBootstrapDatepickerWidget
+from z3c.formwidget.bootstrap_datepicker.fanstaticlibs import (
+  bootstrapdatepicker,
+  bootstrapdatepicker_locales,
+)
+from z3c.formwidget.bootstrap_datepicker.interfaces import (
+  IBootstrapDatepickerWidget,
+)
 
 
 class BootstrapDatepickerWidget(TextWidget):
@@ -29,7 +34,7 @@ class BootstrapDatepickerWidget(TextWidget):
     startView = u'month'
 
     _javascript_input = """
-jQuery("#${id}").datepicker({
+jQuery("#${id}-component").datepicker({
   autoclose: true,
   format: '${format}',
   language: '${language}',

@@ -40,10 +40,13 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        'js.bootstrapdatepicker',
         'setuptools',
+        'fanstatic',
+        'js.bootstrap',
     ],
     entry_points="""
     # -*- Entry points: -*-
+    [fanstatic.libraries]
+    datepicker = z3c.formwidget.bootstrap_datepicker.fanstaticlibs:library
     """,
 )
